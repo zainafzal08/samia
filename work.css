@@ -1,0 +1,18 @@
+footer {
+    background: var(--accent-background-color);
+    --footer-text-color: var(--on-accent-text-color);
+}
+section {
+    background: var(--accent-background-color);
+    position: relative;
+    padding-bottom: 20vw;
+}
+.bg-text, .bg-text-overlay {
+    font-size: 17vw;
+}
+.card {
+    border-radius: 32px;
+    border: 1px solid white;
+    background-color: rgba(255, 255, 255, .02);
+    padding: 32px;
+}

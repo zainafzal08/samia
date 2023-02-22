@@ -1,8 +1,9 @@
 import { commonPageInit, navigateTo } from "./shared/common.js";
+import { checkPassword } from "./shared/databaseReader.js";
 
 function onFormSubmit(e) {
     const password = e.target.querySelector('input').value;
-    if (password === '1234') {
+    if (checkPassword(password)) {
         localStorage.setItem('password', password);
         const searchParams = new URLSearchParams(location.search);
         if (searchParams.has('destination')) {
