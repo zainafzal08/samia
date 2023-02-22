@@ -1,0 +1,109 @@
+.hero {
+    background: var(--accent-background-color);
+    position: relative;
+}
+.hero > * {
+    position: relative;
+    z-index: 1;
+}
+.hero h1 {
+    font-size: var(--text-size-x-lg);
+    color: var(--on-accent-text-color);
+    font-weight: 900;
+    margin: 0;
+    padding: 0;
+}
+.hero h3 {
+    font-size: var(--text-size-md);
+    color: var(--on-accent-text-color);
+    font-weight: 900;
+    margin: 0;
+    padding: 0;
+    margin-top: 16px;
+}
+
+.hero .info {
+    font-weight: 500;
+    padding: 64px 0 120px 0;
+    margin: 0;
+    font-size: var(--text-size-lg);
+}
+.stats-container {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+.stats {
+    display: flex;
+    flex-direction: row;
+    width: 400px;
+}
+.stats .stat {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.stats p {
+    color: var(--on-accent-text-color);
+    padding: 0;
+    margin: 0;
+}
+.stats .num {
+    font-size: var(--text-size-lg);
+    font-weight: 900;
+    padding: 0;
+    padding-bottom: 24px;
+}
+.stats .label {
+    font-weight: 600;
+    font-size: var(--text-size-sm);
+}
+.work-exp {
+    height: 600px;
+}
+.work-exp h1 {
+    font-size: var(--text-size-lg);
+    color: var(--text-primary);
+    font-weight: bold;
+    margin: 0;
+    padding-bottom: 64px;
+    padding-top: 64px;
+}
+.work-exp .table .row {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    border-bottom: 1px solid var(--sep-color);
+}
+.work-exp .table p {
+    font-size: var(--text-size-sm);
+    margin: 0;
+    padding: 24px 0;
+}
+.work-exp .table .row>*:first-child {
+    font-weight: bold;
+}
+.work-exp .table .row>*:last-child {
+    font-weight: bold;
+    text-align: right;
+}
+.hero .bg-text, .hero .bg-text-overlay {
+    position: absolute;
+    font-size: 20vw;
+}
+@media screen and (max-width: 500px) {
+   .hero .info {
+    padding-bottom: 100px;
+   }
+   .stats-container .stat .num {
+    padding-bottom: 12px;
+   }
+   .work-exp {
+    height: 450px;
+   }
+   .work-exp h1 {
+     padding: 32px 0;
+   }
+}

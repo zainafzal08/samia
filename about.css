@@ -1,0 +1,43 @@
+body {
+    height: 100vh;
+}
+.about {
+    flex-grow: 1;
+    background: var(--accent-background-color);    
+    display: flex;
+    gap: 64px;
+}
+.about img {
+    width: 300px;
+    object-fit: contain;
+}
+.about .text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.about h1, p {
+    margin: 0;
+    padding: 0;
+    color: var(--on-accent-text-color);
+}
+.about h1 {
+    font-size: var(--text-size-lg);
+    padding-bottom: 32px;
+}
+.about p {
+    font-size: calc(var(--text-size-sm) + 2px);
+    padding-bottom: 14px;
+}
+.about a {
+    color: var(--on-accent-text-color);
+}
+@media screen and (max-width: 850px){
+    .about {
+        flex-direction: column;
+        place-items: center;
+    }
+    .about img {
+        width: 250px;
+    }
+}
