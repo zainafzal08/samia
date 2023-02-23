@@ -5,7 +5,7 @@ function decrypt(data, password) {
 export async function checkPassword(password) {
     return true;
     
-    const r = await fetch("./passCheck.json");
+    const r = await fetch("./shared/passCheck.json");
     const passCheck = await r.json();
     return decrypt(passCheck.encrypted, password) === passCheck.expected;
 }

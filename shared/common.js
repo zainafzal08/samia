@@ -19,5 +19,11 @@ export function commonPageInit() {
         link.classList.add('current');
     }
 
+    const btn = document.querySelector('#nav-button');
+    const items = document.querySelector('nav .items');
+    btn.addEventListener('click', () => {
+        btn.classList.toggle('open');
+        items.classList.toggle('shown');
+    });
     document.body.dataset.loading = "false";
 };

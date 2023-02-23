@@ -1,7 +1,7 @@
 body {
     padding: 0;
     margin: 0;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Outfit', sans-serif;
     display: flex;
     flex-direction: column;
     
@@ -36,6 +36,7 @@ nav {
     padding: 0 var(--page-h-padding) 48px var(--page-h-padding);
     background: var(--accent-background-color);
     align-items: center;
+    position: relative;
 }
 nav .logo {
     height: 48px;
@@ -52,7 +53,7 @@ nav .items a {
     place-items: center;
     height: 100%;
     color: var(--on-accent-text-color);
-    font-size: var(--text-size-sm);
+    font-size: 12px;
     text-decoration: none;
 }
 nav .items a:visited {
@@ -73,6 +74,36 @@ nav .items a.current::after {
     height: 1px;
     width: 100%;
     background: var(--primary-gradient);
+}
+#nav-button {
+    width: 24px;
+    height: 24px;
+    border: none;
+    background: none;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    cursor: pointer;
+    padding: 0;
+}
+#nav-button .bar {
+    width: 100%;
+    height: 2px;
+    border-radius: 2px;
+    background: var(--on-accent-text-color);
+    transition: all .25s ease-in-out;
+    opacity: 1;
+}
+#nav-button.open .bar:nth-child(1) {
+    transform: translateY(6px) rotate(45deg);
+}
+#nav-button.open .bar:nth-child(2) {
+    opacity: 0;
+}
+#nav-button.open .bar:nth-child(3) {
+    transform: translateY(-6px) rotate(-45deg);
 }
 .gradient {
     background: var(--primary-gradient);
@@ -155,7 +186,30 @@ footer div {
         padding: 32px var(--page-h-padding);
     }
     nav .items {
-        gap: 12px;
+        background: var(--accent-background-color);
+        position: absolute;
+        width: 100%;
+        height: auto;
+        top: 100px;
+        z-index: 3;
+        left: 0;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        gap: 8px;
+        padding: 32px;
+        opacity: 0;
+        transition: .3s all;
+        box-shadow: rgb(255 255 255 / 18%) 0px 0.60323px 0.60323px -1.25px, rgb(255 255 255 / 16%) 0px 2.29021px 2.29021px -2.5px, rgb(255 255 255 / 6%) 0px 10px 10px -3.75px;
+    }
+    nav .items.shown {
+        opacity: 1;
+    }
+    nav .items a {
+        font-size: var(--text-size-md);
+    }
+    nav #nav-button {
+        display: flex;
     }
 }
 .loading-splash {
