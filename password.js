@@ -1,9 +1,10 @@
 import { commonPageInit, navigateTo } from "./shared/common.js";
 import { checkPassword } from "./shared/databaseReader.js";
 
-function onFormSubmit(e) {
+async function onFormSubmit(e) {
+    e.preventDefault();
     const password = e.target.querySelector('input').value;
-    if (checkPassword(password)) {
+    if (await checkPassword(password)) {
         localStorage.setItem('password', password);
         const searchParams = new URLSearchParams(location.search);
         if (searchParams.has('destination')) {
@@ -15,7 +16,6 @@ function onFormSubmit(e) {
         document.querySelector('.password-help').classList.add('shown');
         document.querySelector('.password-wrapper').classList.add('shake');
     }
-    e.preventDefault();
 }
 
 function onInput() {

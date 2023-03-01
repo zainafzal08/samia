@@ -213,12 +213,12 @@ footer div {
     }
 }
 .loading-splash {
-    position: absolute;
+    position: fixed;
     width: 100vw;
     height: 100vh;
     opacity: 0;
     pointer-events: none;
-    z-index: 2;
+    z-index: 999;
     left: 0;
     top: 0;
     background-color: var(--accent-background-color);
@@ -227,3 +227,6 @@ footer div {
 body[data-loading="true"] .loading-splash {
     opacity: 1;
 } 
+body[data-loading="true"] {
+    overflow: hidden;
+}
